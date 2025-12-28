@@ -9,77 +9,126 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
+
 
 public class LeftGateBlock extends Block {
-
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
-    public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
 
-    public LeftGateBlock(Properties properties) {
-        super(properties);
-        this.registerDefaultState(
-                this.stateDefinition.any()
-                        .setValue(FACING, Direction.NORTH)
-                        .setValue(OPEN, false)
-                        .setValue(POWERED, false)
+    public static final VoxelShape CLOSED_EAST = Shapes.or(
+            Block.box(14, 0, 0, 16, 24, 16)
+    );
+
+    public static final VoxelShape CLOSED_NORTH = Shapes.or(
+            Block.box(0, 0, 0, 16, 24, 2)
+    );
+
+    public static final VoxelShape CLOSED_SOUTH = Shapes.or(
+            Block.box(0, 0, 14, 16, 24, 16)
+    );
+
+    public static final VoxelShape CLOSED_WEST = Shapes.or(
+            Block.box(0, 0, 0, 2, 24, 16)
+    );
+
+    // ---------- OPEN SHAPES ----------
+
+    public static final VoxelShape OPEN_EAST = Shapes.or(
+            Block.box(0, 0, 30, 16, 24, 32)
+    );
+
+    public static final VoxelShape OPEN_NORTH = Shapes.or(
+            Block.box(30, 0, 0, 32, 24, 16)
+    );
+
+    public static final VoxelShape OPEN_SOUTH = Shapes.or(
+            Block.box(-16, 0, 0, -14, 24, 16)
+    );
+
+    public static final VoxelShape OPEN_WEST = Shapes.or(
+            Block.box(0, 0, -16, 16, 24, -14)
+    );
+
+    public LeftGateBlock(Properties pProperties) {
+        super(Properties
+                .of()
+                .strength(2.0F)
+                .sound(SoundType.WOOD)
+                .noOcclusion() // lets it be seen through when open
+        );
+
+        this.registerDefaultState(this.stateDefinition.any()
+                .setValue(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH)
+                .setValue(BlockStateProperties.OPEN, false)
+
         );
     }
 
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext ctx) {
-        return this.defaultBlockState().setValue(FACING, ctx.getHorizontalDirection());
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        return this.defaultBlockState()
+                .setValue(FACING, context.getHorizontalDirection().getOpposite())
+                .setValue(OPEN, false);
     }
 
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos,
-                                 Player player, InteractionHand hand, BlockHitResult hitResult) {
+                                 Player player, InteractionHand hand, BlockHitResult hit) {
 
         boolean open = state.getValue(OPEN);
         BlockState newState = state.setValue(OPEN, !open);
 
-        // Auto-rotate gate to face the player when opening
-        if (!open) {
-            Direction playerFacing = player.getDirection();
-            level.setBlock(pos, newState.setValue(FACING, playerFacing), 10);
-        } else {
-            level.setBlock(pos, newState, 10);
-        }
+        level.setBlock(pos, newState, 3);
 
-        level.levelEvent(player, (!open ? 1008 : 1014), pos, 0);
-        return InteractionResult.sidedSuccess(level.isClientSide());
+        return InteractionResult.sidedSuccess(level.isClientSide);
+
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, OPEN, POWERED);
+        builder.add(FACING, OPEN);
     }
 
     @Override
-    public void neighborChanged(BlockState state, Level level, BlockPos pos,
-                                Block block, BlockPos fromPos, boolean moving) {
+    public VoxelShape getCollisionShape(BlockState state, BlockGetter world,
+                                        BlockPos pos, CollisionContext context) {
 
-        boolean powered = level.hasNeighborSignal(pos);
-
-        if (powered != state.getValue(POWERED)) {
-            state = state.setValue(POWERED, powered)
-                    .setValue(OPEN, powered);
-
-            level.setBlock(pos, state, 10);
-            level.levelEvent(null, (powered ? 1008 : 1014), pos, 0);
+        if (state.getValue(OPEN)) {
+            return Shapes.empty();
         }
+
+        Direction dir = state.getValue(FACING);
+        return switch (dir) {
+            case NORTH -> CLOSED_NORTH;
+            case SOUTH -> CLOSED_SOUTH;
+            case WEST -> CLOSED_WEST;
+            default -> CLOSED_EAST;
+        };
     }
 
     @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY; // Normal fence gate behavior
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext ctx) {
+        Direction dir = state.getValue(BlockStateProperties.HORIZONTAL_FACING);
+        boolean open = state.getValue(BlockStateProperties.OPEN);
+
+        return switch (dir) {
+            case NORTH -> open ? OPEN_NORTH : CLOSED_NORTH;
+            case SOUTH -> open ? OPEN_SOUTH : CLOSED_SOUTH;
+            case WEST  -> open ? OPEN_WEST  : CLOSED_WEST;
+            default    -> open ? OPEN_EAST  : CLOSED_EAST; // EAST
+        };
     }
+
+
+
 }

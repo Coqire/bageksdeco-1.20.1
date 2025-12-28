@@ -9,7 +9,6 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -26,49 +25,51 @@ public class RightGateBlock extends Block {
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
 
     public static final VoxelShape CLOSED_EAST = Shapes.or(
-            Block.box(29.75, 0, -16, 31.75, 24.5, 32)
+            Block.box(14, 0, 0, 16, 24, 16)
     );
 
     public static final VoxelShape CLOSED_NORTH = Shapes.or(
-            Block.box(-16, 0, -16, 32, 24.25, -14)
+            Block.box(0, 0, 0, 16, 24, 2)
     );
 
     public static final VoxelShape CLOSED_SOUTH = Shapes.or(
-            Block.box(-16, 0, 30, 32, 24.25, 32)
+            Block.box(0, 0, 14, 16, 24, 16)
     );
 
     public static final VoxelShape CLOSED_WEST = Shapes.or(
-            Block.box(-16, 0, -16, -13.5, 24.5, 32)
+            Block.box(0, 0, 0, 2, 24, 16)
     );
 
     // ---------- OPEN SHAPES ----------
 
     public static final VoxelShape OPEN_EAST = Shapes.or(
-            Block.box(-16, 0, 30, 32, 24.25, 32)
+            Block.box(0, 0, -16, 16, 24, -14)
     );
 
     public static final VoxelShape OPEN_NORTH = Shapes.or(
-            Block.box(-16, 0, -16, -13.5, 24.5, 32)
+            Block.box(-16, 0, 0, -14, 24, 16)
     );
 
     public static final VoxelShape OPEN_SOUTH = Shapes.or(
-            Block.box(29.75, 0, -16, 31.75, 24.5, 32)
+            Block.box(30, 0, 0, 32, 24, 16)
     );
 
     public static final VoxelShape OPEN_WEST = Shapes.or(
-            Block.box(-16, 0, 30, 32, 24.25, 32)
+            Block.box(0, 0, 30, 16, 24, 32)
     );
 
     public RightGateBlock(Properties pProperties) {
-        super(Properties.copy(Blocks.OAK_LOG)
+        super(Properties
+                .of()
                 .strength(2.0F)
                 .sound(SoundType.WOOD)
-                .noOcclusion()
+                .noOcclusion() // lets it be seen through when open
         );
 
         this.registerDefaultState(this.stateDefinition.any()
-                .setValue(FACING, Direction.NORTH)
-                .setValue(OPEN, false)
+                .setValue(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH)
+                .setValue(BlockStateProperties.OPEN, false)
+
         );
     }
 
@@ -79,17 +80,17 @@ public class RightGateBlock extends Block {
                 .setValue(OPEN, false);
     }
 
-    // 1.20.1 uses `use`, not `useWithoutItem`
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos,
-                                 Player player, InteractionHand hand, BlockHitResult hitResult) {
+                                 Player player, InteractionHand hand, BlockHitResult hit) {
 
         boolean open = state.getValue(OPEN);
         BlockState newState = state.setValue(OPEN, !open);
 
-        level.setBlock(pos, newState, Block.UPDATE_ALL);
+        level.setBlock(pos, newState, 3);
 
-        return InteractionResult.sidedSuccess(level.isClientSide());
+        return InteractionResult.sidedSuccess(level.isClientSide);
+
     }
 
     @Override
@@ -98,33 +99,32 @@ public class RightGateBlock extends Block {
     }
 
     @Override
-    public VoxelShape getCollisionShape(BlockState state, BlockGetter level,
+    public VoxelShape getCollisionShape(BlockState state, BlockGetter world,
                                         BlockPos pos, CollisionContext context) {
 
         if (state.getValue(OPEN)) {
             return Shapes.empty();
         }
 
-        return switch (state.getValue(FACING)) {
+        Direction dir = state.getValue(FACING);
+        return switch (dir) {
             case NORTH -> CLOSED_NORTH;
             case SOUTH -> CLOSED_SOUTH;
-            case WEST  -> CLOSED_WEST;
-            default    -> CLOSED_EAST;
+            case WEST -> CLOSED_WEST;
+            default -> CLOSED_EAST;
         };
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter level,
-                               BlockPos pos, CollisionContext context) {
-
-        Direction dir = state.getValue(FACING);
-        boolean open = state.getValue(OPEN);
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext ctx) {
+        Direction dir = state.getValue(BlockStateProperties.HORIZONTAL_FACING);
+        boolean open = state.getValue(BlockStateProperties.OPEN);
 
         return switch (dir) {
             case NORTH -> open ? OPEN_NORTH : CLOSED_NORTH;
             case SOUTH -> open ? OPEN_SOUTH : CLOSED_SOUTH;
-            case WEST  -> open ? OPEN_WEST  : CLOSED_WEST;
-            default    -> open ? OPEN_EAST  : CLOSED_EAST;
+            case WEST -> open ? OPEN_WEST : CLOSED_WEST;
+            default -> open ? OPEN_EAST : CLOSED_EAST; // EAST
         };
     }
 }

@@ -26,37 +26,37 @@ public class LeftGateBlock extends Block {
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
 
     public static final VoxelShape CLOSED_EAST = Shapes.or(
-            Block.box(14, 0, 0, 16, 24, 16)
+            Block.box(13, 0, 0, 16, 21, 16)
     );
 
     public static final VoxelShape CLOSED_NORTH = Shapes.or(
-            Block.box(0, 0, 0, 16, 24, 2)
+            Block.box(0, 0, 0, 16, 21, 3)
     );
 
     public static final VoxelShape CLOSED_SOUTH = Shapes.or(
-            Block.box(0, 0, 14, 16, 24, 16)
+            Block.box(0, 0, 13, 16, 21, 16)
     );
 
     public static final VoxelShape CLOSED_WEST = Shapes.or(
-            Block.box(0, 0, 0, 2, 24, 16)
+            Block.box(0, 0, 0, 3, 21, 16)
     );
 
     // ---------- OPEN SHAPES ----------
 
     public static final VoxelShape OPEN_EAST = Shapes.or(
-            Block.box(0, 0, 30, 16, 24, 32)
+            Block.box(0, 0, 13, 16, 21, 16)
     );
 
     public static final VoxelShape OPEN_NORTH = Shapes.or(
-            Block.box(30, 0, 0, 32, 24, 16)
+            Block.box(0, 0, 0, 16, 21, 3)
     );
 
     public static final VoxelShape OPEN_SOUTH = Shapes.or(
-            Block.box(-16, 0, 0, -14, 24, 16)
+            Block.box(0, 0, 13, 16, 21, 16)
     );
 
     public static final VoxelShape OPEN_WEST = Shapes.or(
-            Block.box(0, 0, -16, 16, 24, -14)
+            Block.box(0, 0, 0, 3, 21, 16)
     );
 
     public LeftGateBlock(Properties pProperties) {

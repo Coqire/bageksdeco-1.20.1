@@ -4,7 +4,7 @@
 	"texture_size": [64, 64],
 	"ambientocclusion": "false",
 	"textures": {
-		"11": "bageksdeco:fences/gates/gatebag_7",
+		"11": "bageksdeco:block/fences/gates/gatebag_7",
 		"particle": "minecraft:block/birch_log"
 	},
 	"elements": [

@@ -1,26 +1,31 @@
 package com.coqire.bageksdeco.block.custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.item.LeadItem;
+import net.minecraft.world.phys.Vec3;
 
 import java.util.stream.Stream;
 
 public class HitchingpostBlock extends Block {
-public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-  public HitchingpostBlock(Properties pProperties) {
-      super(pProperties);
-  }
+    public static final DirectionProperty FACING = BlockStateProperties.FACING;
 
     private static final VoxelShape SHAPE_NORTH = Stream.of(
             Block.box(-16, 0, -10, 32, 25, 3)
@@ -46,26 +51,36 @@ public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_F
             Block.box(-16, 0, -10, 32, 25, 3)
     ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
 
-    @Override
-    public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
-        return switch (state.getValue(BlockStateProperties.FACING)) {
-            case DOWN -> SHAPE_DOWN;
-            case UP -> SHAPE_UP;
-            case NORTH -> SHAPE_NORTH;
-            case SOUTH -> SHAPE_SOUTH;
-            case WEST -> SHAPE_WEST;
-            case EAST -> SHAPE_EAST;
-        };
+    public HitchingpostBlock(Properties props) {
+        super(props.noOcclusion());
+        this.registerDefaultState(this.stateDefinition.any()
+                .setValue(FACING, net.minecraft.core.Direction.NORTH));
     }
 
 
+
+    // Placement
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return this.defaultBlockState().setValue(BlockStateProperties.FACING, context.getNearestLookingDirection().getOpposite());
+        return this.defaultBlockState()
+                .setValue(FACING, context.getNearestLookingDirection().getOpposite());
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(BlockStateProperties.FACING);
+        builder.add(FACING);
+    }
+
+    // Shape override (keep yours here)
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext ctx) {
+        return switch (state.getValue(FACING)) {
+            case NORTH -> SHAPE_NORTH;
+            case SOUTH -> SHAPE_SOUTH;
+            case EAST  -> SHAPE_EAST;
+            case WEST  -> SHAPE_WEST;
+            case UP    -> SHAPE_UP;
+            case DOWN  -> SHAPE_DOWN;
+        };
     }
 }

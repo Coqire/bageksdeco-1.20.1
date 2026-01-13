@@ -798,35 +798,140 @@ public class ModBlocks {
             
     public static final RegistryObject<Block> FROLLTOP_9 = registerBlock("frolltop_9",
             () -> new FRolltopBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
-            
-
+    
+    
     public static final RegistryObject<Block> TRAKEHNER_1 = registerBlock("trakehner_1",
-            () -> new TRolltopBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+            () -> new TrakehnerBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
             
     public static final RegistryObject<Block> TRAKEHNER_2 = registerBlock("trakehner_2",
-            () -> new TRolltopBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+            () -> new TrakehnerBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
             
     public static final RegistryObject<Block> TRAKEHNER_3 = registerBlock("trakehner_3",
-            () -> new TRolltopBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+            () -> new TrakehnerBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
             
     public static final RegistryObject<Block> TRAKEHNER_4 = registerBlock("trakehner_4",
-            () -> new TRolltopBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+            () -> new TrakehnerBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
             
     public static final RegistryObject<Block> TRAKEHNER_5 = registerBlock("trakehner_5",
-            () -> new TRolltopBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+            () -> new TrakehnerBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
             
     public static final RegistryObject<Block> TRAKEHNER_6 = registerBlock("trakehner_6",
-            () -> new TRolltopBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+            () -> new TrakehnerBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
             
     public static final RegistryObject<Block> TRAKEHNER_7 = registerBlock("trakehner_7",
-            () -> new TRolltopBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+            () -> new TrakehnerBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
             
     public static final RegistryObject<Block> TRAKEHNER_8 = registerBlock("trakehner_8",
-            () -> new TRolltopBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+            () -> new TrakehnerBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
             
     public static final RegistryObject<Block> TRAKEHNER_9 = registerBlock("trakehner_9",
-            () -> new TRolltopBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+            () -> new TrakehnerBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
 
+
+    public static final RegistryObject<Block> CORNER_1 = registerBlock("corner_1",
+            () -> new CornerBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> CORNER_2 = registerBlock("corner_2",
+            () -> new CornerBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> CORNER_3 = registerBlock("corner_3",
+            () -> new CornerBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> CORNER_4 = registerBlock("corner_4",
+            () -> new CornerBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> CORNER_5 = registerBlock("corner_5",
+            () -> new CornerBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> CORNER_6 = registerBlock("corner_6",
+            () -> new CornerBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> CORNER_7 = registerBlock("corner_7",
+            () -> new CornerBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> CORNER_8 = registerBlock("corner_8",
+            () -> new CornerBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> CORNER_9 = registerBlock("corner_9",
+            () -> new CornerBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    
+    public static final RegistryObject<Block> DITCH1_1 = registerBlock("ditch1_1",
+            () -> new DitchOneBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> DITCH1_2 = registerBlock("ditch1_2",
+            () -> new DitchOneBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> DITCH1_3 = registerBlock("ditch1_3",
+            () -> new DitchOneBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> DITCH1_4 = registerBlock("ditch1_4",
+            () -> new DitchOneBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> DITCH1_5 = registerBlock("ditch1_5",
+            () -> new DitchOneBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> DITCH1_6 = registerBlock("ditch1_6",
+            () -> new DitchOneBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> DITCH1_7 = registerBlock("ditch1_7",
+            () -> new DitchOneBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> DITCH1_8 = registerBlock("ditch1_8",
+            () -> new DitchOneBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> DITCH1_9 = registerBlock("ditch1_9",
+            () -> new DitchOneBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> DITCH2_1 = registerBlock("ditch2_1",
+            () -> new DitchTwoBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+    
+    public static final RegistryObject<Block> DITCH2_2 = registerBlock("ditch2_2",
+            () -> new DitchTwoBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> DITCH2_3 = registerBlock("ditch2_3",
+            () -> new DitchTwoBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> DITCH2_4 = registerBlock("ditch2_4",
+            () -> new DitchTwoBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> DITCH2_5 = registerBlock("ditch2_5",
+            () -> new DitchTwoBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> DITCH2_6 = registerBlock("ditch2_6",
+            () -> new DitchTwoBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> DITCH2_7 = registerBlock("ditch2_7",
+            () -> new DitchTwoBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> DITCH2_8 = registerBlock("ditch2_8",
+            () -> new DitchTwoBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> DITCH2_9 = registerBlock("ditch2_9",
+            () -> new DitchTwoBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+
+    public static final RegistryObject<Block> WALL1_1 = registerBlock("wall1_1",
+            () -> new WallOneBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+    public static final RegistryObject<Block> WALL1_2 = registerBlock("wall1_2",
+            () -> new WallOneBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+    public static final RegistryObject<Block> WALL1_3 = registerBlock("wall1_3",
+            () -> new WallOneBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+    public static final RegistryObject<Block> WALL2_1 = registerBlock("wall2_1",
+            () -> new WallTwoBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+    public static final RegistryObject<Block> WALL2_2 = registerBlock("wall2_2",
+            () -> new WallTwoBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+    public static final RegistryObject<Block> WALL2_3 = registerBlock("wall2_3",
+            () -> new WallTwoBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+    public static final RegistryObject<Block> WALL3_1 = registerBlock("wall3_1",
+            () -> new WallThreeBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+    public static final RegistryObject<Block> WALL3_2 = registerBlock("wall3_2",
+            () -> new WallThreeBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+    public static final RegistryObject<Block> WALL3_3 = registerBlock("wall3_3",
+            () -> new WallThreeBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    
+    
     //HUNTERJUMPS
     public static final RegistryObject<Block> LHUNTER_1 = registerBlock("lhunter_1",
             () -> new LJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));

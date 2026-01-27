@@ -5,7 +5,8 @@
 	"texture_size": [128, 128],
 	"textures": {
 		"0": "bageksdeco:block/jumps/hunter/hunter_1",
-		"particle": "minecraft:block/oak_log"
+		"particle": "minecraft:block/oak_log",
+		"rendertype": "cutout"
 	},
 	"elements": [
 		{

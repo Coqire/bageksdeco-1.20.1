@@ -381,6 +381,9 @@
   "block.bageksdeco.rhunter2_7": "Cherry Hunter Three Right",
   "block.bageksdeco.rhunter2_8": "Mangrove Hunter Three Right",
   "block.bageksdeco.rhunter2_9": "Whitewash Hunter Three Right",
+
+  "block.bageksdeco.lwell_1": "Well Hunter Jump Left",
+  "block.bageksdeco.rwell_1": "Well Hunter Jump Right",
   
   "block.bageksdeco.lsjump1_1": "Oak Showjump One Left",
   "block.bageksdeco.lsjump1_2": "Spruce Showjump One Left",
@@ -401,6 +404,15 @@
   "block.bageksdeco.rsjump1_7": "Cherry Showjump One Right",
   "block.bageksdeco.rsjump1_8": "Mangrove Showjump One Right",
   "block.bageksdeco.rsjump1_9": "Whitewash Showjump One Right",
+
+  "block.bageksdeco.bee_1": "Bee Showjump Right",
+  "block.bageksdeco.bee_2": "Bee Showjump Left",
+  "block.bageksdeco.bee_3": "Bee Showjump Middle",
+
+  "block.bageksdeco.sds_1": "Star Dusk Stables Hunter Left",
+  "block.bageksdeco.sds_2": "Star Dusk Stables Hunter Right",
+  "block.bageksdeco.sds_3": "Star Dusk Stables Hunter Middle",
+  
 
   "block.bageksdeco.english_saddle_swem_1": "Black English SWEM Saddle",
   "block.bageksdeco.english_saddle_swem_2": "Walnut English SWEM Saddle",

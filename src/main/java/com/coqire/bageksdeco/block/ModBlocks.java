@@ -1154,8 +1154,26 @@ public class ModBlocks {
             
     public static final RegistryObject<Block> RSJUMP1_9 = registerBlock("rsjump1_9",
             () -> new RJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
-            
 
+
+    public static final RegistryObject<Block> BEE_1 = registerBlock("bee_1",
+            () -> new BeeJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+    public static final RegistryObject<Block> BEE_2 = registerBlock("bee_2",
+            () -> new BeeJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+    public static final RegistryObject<Block> BEE_3 = registerBlock("bee_3",
+            () -> new BeeJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> SDS_1 = registerBlock("sds_1",
+            () -> new BeeJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+    public static final RegistryObject<Block> SDS_2 = registerBlock("sds_2",
+            () -> new BeeJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+    public static final RegistryObject<Block> SDS_3 = registerBlock("sds_3",
+            () -> new BeeJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> lwell_1 = registerBlock("lwell_1",
+            () -> new BeeJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+    public static final RegistryObject<Block> rwell_2 = registerBlock("rwell_1",
+            () -> new BeeJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
 
 
     // ENGLISH SWEM SADDLES

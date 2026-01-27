@@ -15,38 +15,36 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import java.util.stream.Stream;
 
-public class WallThreeBlock extends Block {
+public class WesternSaddleSWEMBlock extends Block {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-
-    public WallThreeBlock(Properties pProperties) {
+    public WesternSaddleSWEMBlock(Properties pProperties) {
         super(pProperties);
     }
 
     private static final VoxelShape SHAPE_NORTH = Stream.of(
-            Block.box(-16, 0, 13.5, 32, 28.25, 17.25)
+            Block.box(4, -16, -4, 14, -6, 7)
     ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
 
     private static final VoxelShape SHAPE_EAST =Stream.of(
-            Block.box(-0.75, 0, -16, 3, 28.25, 32)
+            Block.box(9, -16, 4, 20, -6, 14)
     ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
 
     private static final VoxelShape SHAPE_SOUTH = Stream.of(
-            Block.box(-16, 0, -1.25, 32, 28.25, 2.5)
+            Block.box(4, -16, 9, 14, -6, 20)
     ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
 
     private static final VoxelShape SHAPE_WEST = Stream.of(
-            Block.box(13.25, 0, -16, 17, 28.25, 32)
+            Block.box(-4, -16, 2, 7, -6, 12)
     ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
 
     private static final VoxelShape SHAPE_UP = Stream.of(
-            Block.box(-16, 0, 13.5, 32, 28.25, 17.25)
+            Block.box(4, -16, -4, 14, -6, 7)
     ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
 
     private static final VoxelShape SHAPE_DOWN = Stream.of(
-            Block.box(-16, 0, 13.5, 32, 28.25, 17.25)
+            Block.box(4, -16, -4, 14, -6, 7)
     ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
-
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {

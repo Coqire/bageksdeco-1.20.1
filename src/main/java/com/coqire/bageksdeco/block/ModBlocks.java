@@ -987,6 +987,33 @@ public class ModBlocks {
             
     public static final RegistryObject<Block> LHUNTER1_9 = registerBlock("lhunter1_9",
             () -> new LJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> LHUNTER2_1 = registerBlock("lhunter2_1",
+            () -> new LJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> LHUNTER2_2 = registerBlock("lhunter2_2",
+            () -> new LJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> LHUNTER2_3 = registerBlock("lhunter2_3",
+            () -> new LJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> LHUNTER2_4 = registerBlock("lhunter2_4",
+            () -> new LJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> LHUNTER2_5 = registerBlock("lhunter2_5",
+            () -> new LJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> LHUNTER2_6 = registerBlock("lhunter2_6",
+            () -> new LJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> LHUNTER2_7 = registerBlock("lhunter2_7",
+            () -> new LJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> LHUNTER2_8 = registerBlock("lhunter2_8",
+            () -> new LJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> LHUNTER2_9 = registerBlock("lhunter2_9",
+            () -> new LJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
             
 
     public static final RegistryObject<Block> RHUNTER_1 = registerBlock("rhunter_1",
@@ -1043,7 +1070,33 @@ public class ModBlocks {
             
     public static final RegistryObject<Block> RHUNTER1_9 = registerBlock("rhunter1_9",
             () -> new RJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
-            
+
+    public static final RegistryObject<Block> RHUNTER2_1 = registerBlock("rhunter2_1",
+            () -> new RJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> RHUNTER2_2 = registerBlock("rhunter2_2",
+            () -> new RJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> RHUNTER2_3 = registerBlock("rhunter2_3",
+            () -> new RJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> RHUNTER2_4 = registerBlock("rhunter2_4",
+            () -> new RJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> RHUNTER2_5 = registerBlock("rhunter2_5",
+            () -> new RJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> RHUNTER2_6 = registerBlock("rhunter2_6",
+            () -> new RJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> RHUNTER2_7 = registerBlock("rhunter2_7",
+            () -> new RJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> RHUNTER2_8 = registerBlock("rhunter2_8",
+            () -> new RJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> RHUNTER2_9 = registerBlock("rhunter2_9",
+            () -> new RJumpBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
 
 
     //SHOWJUMPS
@@ -1117,7 +1170,25 @@ public class ModBlocks {
             
     public static final RegistryObject<Block> ENGLISH_SADDLE_SWEM_4 = registerBlock("english_saddle_swem_4",
             () -> new EnglishSaddleSWEMBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_WOOL).noOcclusion()));
-            
+    
+    // WESTERN SWEM SADDLES
+    public static final RegistryObject<Block> WESTERN_SADDLE_1 = registerBlock("western_saddle_1",
+            () -> new WesternSaddleSWEMBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_WOOL).noOcclusion()));
+
+    public static final RegistryObject<Block> WESTERN_SADDLE_2 = registerBlock("western_saddle_2",
+            () -> new WesternSaddleSWEMBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_WOOL).noOcclusion()));
+
+    public static final RegistryObject<Block> WESTERN_SADDLE_3 = registerBlock("western_saddle_3",
+            () -> new WesternSaddleSWEMBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_WOOL).noOcclusion()));
+
+    public static final RegistryObject<Block> WESTERN_SADDLE_4 = registerBlock("western_saddle_4",
+            () -> new WesternSaddleSWEMBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_WOOL).noOcclusion()));
+
+    //XC ACCESSORIES
+    public static final RegistryObject<Block> XCFLAG_1 = registerBlock("xcflag_1",
+            () -> new XCFlagOneBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+    public static final RegistryObject<Block> XCFLAG_2 = registerBlock("xcflag_2",
+            () -> new XCFlagTwoBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
 
     // HITCHING POST WATER
     public static final RegistryObject<Block> HPW_1 = registerBlock("hpw_1",

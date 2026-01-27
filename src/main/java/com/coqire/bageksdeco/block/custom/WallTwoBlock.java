@@ -24,27 +24,27 @@ public class WallTwoBlock extends Block {
     }
 
     private static final VoxelShape SHAPE_NORTH = Stream.of(
-            Block.box(-16, -16, -3, 32, 19, 0)
+            Block.box(-16, -16, 13.5, 32, 19.25, 17.25)
     ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
 
     private static final VoxelShape SHAPE_EAST =Stream.of(
-            Block.box(16, -16, -16, 19, 19.25, 32)
+            Block.box(-0.75, -16, -16, 3, 19.25, 32)
     ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
 
     private static final VoxelShape SHAPE_SOUTH = Stream.of(
-            Block.box(-16, -16, 16, 32, 19, 19)
+            Block.box(-16, -16, -0.5, 32, 19.25, 3.25)
     ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
 
     private static final VoxelShape SHAPE_WEST = Stream.of(
-            Block.box(-3, -16, -16, 0, 19.25, 32)
+            Block.box(13.25, -16, -16, 17, 19.25, 32)
     ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
 
     private static final VoxelShape SHAPE_UP = Stream.of(
-            Block.box(-16, -16, -3, 32, 19, 0)
+            Block.box(-16, -16, 13.5, 32, 19.25, 17.25)
     ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
 
     private static final VoxelShape SHAPE_DOWN = Stream.of(
-            Block.box(-16, -16, -3, 32, 19, 0)
+            Block.box(-16, -16, 13.5, 32, 19.25, 17.25)
     ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
 
 

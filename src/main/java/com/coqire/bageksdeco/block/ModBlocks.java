@@ -1223,11 +1223,7 @@ public class ModBlocks {
             
     public static final RegistryObject<Block> HPW_11 = registerBlock("hpw_11",
             () -> new HitchingpostBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
-            
 
-    //Sweatscrapers
-    public static final RegistryObject<Block> BAGEK_SWEATSCRAPER_1 = registerBlock("bagek_sweatscraper_1",
-            () -> new SweatScraperBlock(BlockBehaviour.Properties.copy(Blocks.RED_WOOL).noOcclusion()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

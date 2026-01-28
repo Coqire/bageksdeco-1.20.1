@@ -384,6 +384,9 @@
 
   "block.bageksdeco.lwell_1": "Well Hunter Jump Left",
   "block.bageksdeco.rwell_1": "Well Hunter Jump Right",
+
+  "block.bageksdeco.lbridge_1": "Bridge Hunter Jump Left",
+  "block.bageksdeco.rbridge_1": "Bridge Hunter Jump Right",
   
   "block.bageksdeco.lsjump1_1": "Oak Showjump One Left",
   "block.bageksdeco.lsjump1_2": "Spruce Showjump One Left",
@@ -425,6 +428,9 @@
 
   "block.bageksdeco.xcflag_1" : "Red XC Flag",
   "block.bageksdeco.xcflag_2" : "Left XC Flag",
+
+  "block.bageksdeco.cattle_1" : "Cattle Fence 1",
+  "block.bageksdeco.cattle_2" : "Cattle Fence 2",
 
   "block.bageksdeco.hpw_1": "Oak Hitching Post /T",
   "block.bageksdeco.hpw_2": "Spruce Hitching Post /T",

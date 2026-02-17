@@ -24,9 +24,9 @@ public class bageksdeco
     public static final String MOD_ID = "bageksdeco";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public bageksdeco(FMLJavaModLoadingContext context)
-    {
-        IEventBus modEventBus = context.getModEventBus();
+    public bageksdeco() {
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
         modEventBus.addListener(this::commonSetup);
 
         ModItems.register(modEventBus);

@@ -26,10 +26,9 @@ public class BageksCreativeModTab {
                 .title(Component.translatable("creativetab.bagfence_tab"))
                 .icon(() -> new ItemStack(ModItems.FENCELOGO.get()))
                 .displayItems((pParameters, pOutput) -> {
-                    ModBlocks.BLOCKS.getEntries().forEach((registeredItem) -> {
-                        Block block = registeredItem.get();
-                        pOutput.accept(block);
-                    });
+                    ModBlocks.BLOCKS.getEntries().forEach(regObj ->
+                            regObj.ifPresent(pOutput::accept)
+                    );
 
 
                 })

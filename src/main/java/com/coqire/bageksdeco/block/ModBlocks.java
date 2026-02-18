@@ -1532,6 +1532,73 @@ public class ModBlocks {
     public static final RegistryObject<Block>STALLGATE10_11 = registerBlock("stallgate10_11",
             () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
 
+    public static final RegistryObject<Block>STALLGATE11_1 = registerBlock("stallgate11_1",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
+    public static final RegistryObject<Block>STALLGATE11_2 = registerBlock("stallgate11_2",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
+    public static final RegistryObject<Block>STALLGATE11_3 = registerBlock("stallgate11_3",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
+    public static final RegistryObject<Block>STALLGATE11_4 = registerBlock("stallgate11_4",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
+    public static final RegistryObject<Block>STALLGATE11_5 = registerBlock("stallgate11_5",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
+    public static final RegistryObject<Block>STALLGATE11_6 = registerBlock("stallgate11_6",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
+    public static final RegistryObject<Block>STALLGATE11_7 = registerBlock("stallgate11_7",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
+    public static final RegistryObject<Block>STALLGATE11_8 = registerBlock("stallgate11_8",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
+    public static final RegistryObject<Block>STALLGATE11_9 = registerBlock("stallgate11_9",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
+    public static final RegistryObject<Block>STALLGATE11_10 = registerBlock("stallgate11_10",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
+    public static final RegistryObject<Block>STALLGATE11_11 = registerBlock("stallgate11_11",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
+
+    public static final RegistryObject<Block>STALLGATE12_1 = registerBlock("stallgate12_1",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
+    public static final RegistryObject<Block>STALLGATE12_2 = registerBlock("stallgate12_2",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
+    public static final RegistryObject<Block>STALLGATE12_3 = registerBlock("stallgate12_3",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
+    public static final RegistryObject<Block>STALLGATE12_4 = registerBlock("stallgate12_4",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
+    public static final RegistryObject<Block>STALLGATE12_5 = registerBlock("stallgate12_5",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
+    public static final RegistryObject<Block>STALLGATE12_6 = registerBlock("stallgate12_6",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
+    public static final RegistryObject<Block>STALLGATE12_7 = registerBlock("stallgate12_7",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
+    public static final RegistryObject<Block>STALLGATE12_8 = registerBlock("stallgate12_8",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
+    public static final RegistryObject<Block>STALLGATE12_9 = registerBlock("stallgate12_9",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
+    public static final RegistryObject<Block>STALLGATE12_10 = registerBlock("stallgate12_10",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
+    public static final RegistryObject<Block>STALLGATE12_11 = registerBlock("stallgate12_11",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
     // ENGLISH SWEM SADDLES
     public static final RegistryObject<Block> ENGLISH_SADDLE_SWEM_1 = registerBlock("english_saddle_swem_1",
             () -> new EnglishSaddleSWEMBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_WOOL).noOcclusion()));

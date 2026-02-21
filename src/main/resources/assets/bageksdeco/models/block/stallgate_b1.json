@@ -3,8 +3,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "bageksdeco:block/stalls/gates/stallguard/stallguard1_1",
-		"particle": "bageksdeco:block/stalls/gates/stallguard/stallguard1_1"
+		"0": "bageksdeco:block/stalls/gates/stallguard/stallgate_b1",
+		"particle": "bageksdeco:block/stalls/gates/stallguard/stallgate_b1"
 	},
 	"elements": [
 		{

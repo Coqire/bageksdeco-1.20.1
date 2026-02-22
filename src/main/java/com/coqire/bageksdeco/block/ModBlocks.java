@@ -1599,6 +1599,142 @@ public class ModBlocks {
     public static final RegistryObject<Block> STALLGATE12_11 = registerBlock("stallgate12_11",
             () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
 
+    
+    public static final RegistryObject<Block> STALLFRONT1_1 = registerBlock("stallfront1_1",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT1_2 = registerBlock("stallfront1_2",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT1_3 = registerBlock("stallfront1_3",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT1_4 = registerBlock("stallfront1_4",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT1_5 = registerBlock("stallfront1_5",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT1_6 = registerBlock("stallfront1_6",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT1_7 = registerBlock("stallfront1_7",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT1_8 = registerBlock("stallfront1_8",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT1_9 = registerBlock("stallfront1_9",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT1_10 = registerBlock("stallfront1_10",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT1_11 = registerBlock("stallfront1_11",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT3_1 = registerBlock("stallfront3_1",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT3_2 = registerBlock("stallfront3_2",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT3_3 = registerBlock("stallfront3_3",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT3_4 = registerBlock("stallfront3_4",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT3_5 = registerBlock("stallfront3_5",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT3_6 = registerBlock("stallfront3_6",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT3_7 = registerBlock("stallfront3_7",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT3_8 = registerBlock("stallfront3_8",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT3_9 = registerBlock("stallfront3_9",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT3_10 = registerBlock("stallfront3_10",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT3_11 = registerBlock("stallfront3_11",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT5_1 = registerBlock("stallfront5_1",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT5_2 = registerBlock("stallfront5_2",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT5_3 = registerBlock("stallfront5_3",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT5_4 = registerBlock("stallfront5_4",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT5_5 = registerBlock("stallfront5_5",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT5_6 = registerBlock("stallfront5_6",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT5_7 = registerBlock("stallfront5_7",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT5_8 = registerBlock("stallfront5_8",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT5_9 = registerBlock("stallfront5_9",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT5_10 = registerBlock("stallfront5_10",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT5_11 = registerBlock("stallfront5_11",
+            () -> new LStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+
+    public static final RegistryObject<Block> STALLFRONT2_1 = registerBlock("stallfront2_1",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT2_2 = registerBlock("stallfront2_2",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT2_3 = registerBlock("stallfront2_3",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT2_4 = registerBlock("stallfront2_4",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT2_5 = registerBlock("stallfront2_5",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT2_6 = registerBlock("stallfront2_6",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT2_7 = registerBlock("stallfront2_7",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT2_8 = registerBlock("stallfront2_8",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT2_9 = registerBlock("stallfront2_9",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT2_10 = registerBlock("stallfront2_10",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT2_11 = registerBlock("stallfront2_11",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT4_1 = registerBlock("stallfront4_1",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT4_2 = registerBlock("stallfront4_2",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT4_3 = registerBlock("stallfront4_3",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT4_4 = registerBlock("stallfront4_4",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT4_5 = registerBlock("stallfront4_5",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT4_6 = registerBlock("stallfront4_6",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT4_7 = registerBlock("stallfront4_7",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT4_8 = registerBlock("stallfront4_8",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT4_9 = registerBlock("stallfront4_9",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT4_10 = registerBlock("stallfront4_10",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT4_11 = registerBlock("stallfront4_11",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT6_1 = registerBlock("stallfront6_1",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT6_2 = registerBlock("stallfront6_2",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT6_3 = registerBlock("stallfront6_3",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT6_4 = registerBlock("stallfront6_4",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT6_5 = registerBlock("stallfront6_5",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT6_6 = registerBlock("stallfront6_6",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT6_7 = registerBlock("stallfront6_7",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT6_8 = registerBlock("stallfront6_8",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT6_9 = registerBlock("stallfront6_9",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT6_10 = registerBlock("stallfront6_10",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> STALLFRONT6_11 = registerBlock("stallfront6_11",
+            () -> new RStallFrontBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
+    
+    
     public static final RegistryObject<Block> WEBGUARD1_1 = registerBlock("webguard1_1",
             () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
 
@@ -1658,6 +1794,7 @@ public class ModBlocks {
             () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
     public static final RegistryObject<Block> STALLGATE_B28 = registerBlock("stallgate_b28",
             () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    
 
 
 

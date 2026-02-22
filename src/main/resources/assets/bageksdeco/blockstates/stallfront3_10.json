@@ -1,0 +1,27 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "bageksdeco:block/stallfront3_10"
+        },
+        "facing=east": {
+            "model": "bageksdeco:block/stallfront3_10",
+            "y": 90
+        },
+        "facing=south": {
+            "model": "bageksdeco:block/stallfront3_10",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "bageksdeco:block/stallfront3_10",
+            "y": 270
+        },
+        "facing=up": {
+            "model": "bageksdeco:block/stallfront3_10",
+            "y": 90
+        },
+        "facing=down": {
+            "model": "bageksdeco:block/stallfront3_10",
+            "y": 90
+        }
+    }
+}

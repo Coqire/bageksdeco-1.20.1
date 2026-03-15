@@ -1,11 +1,10 @@
 {
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
-	"ambientocclusion": false,
 	"texture_size": [128, 128],
 	"textures": {
 		"1": "bageksdeco:block/stalls/gates/stallgate8_9",
-		"particle": "bageksdeco:block/stalls/gates/stallgate8_11"
+		"particle": "bageksdeco:block/stalls/gates/stallgate8_91"
 	},
 	"elements": [
 		{

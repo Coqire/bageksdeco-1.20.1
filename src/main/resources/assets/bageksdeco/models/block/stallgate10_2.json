@@ -4,7 +4,7 @@
 	"texture_size": [128, 128],
 	"textures": {
 		"1": "bageksdeco:block/stalls/gates/stallgate8_2",
-		"particle": "bageksdeco:block/stalls/gates/stallgate8_11"
+		"particle": "bageksdeco:block/stalls/gates/stallgate8_21"
 	},
 	"elements": [
 		{

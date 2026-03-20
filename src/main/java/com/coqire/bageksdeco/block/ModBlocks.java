@@ -1738,6 +1738,63 @@ public class ModBlocks {
     public static final RegistryObject<Block> WEBGUARD1_1 = registerBlock("webguard1_1",
             () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
 
+    public static final RegistryObject<Block> WEBGUARD3_1 = registerBlock("webguard3_1",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_2 = registerBlock("webguard3_2",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_3 = registerBlock("webguard3_3",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_4 = registerBlock("webguard3_4",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_5 = registerBlock("webguard3_5",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_6 = registerBlock("webguard3_6",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_7 = registerBlock("webguard3_7",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_8 = registerBlock("webguard3_8",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_9 = registerBlock("webguard3_9",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_10 = registerBlock("webguard3_10",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_11 = registerBlock("webguard3_11",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_12 = registerBlock("webguard3_12",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_13 = registerBlock("webguard3_13",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_14 = registerBlock("webguard3_14",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_15 = registerBlock("webguard3_15",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_16 = registerBlock("webguard3_16",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_17 = registerBlock("webguard3_17",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_18 = registerBlock("webguard3_18",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_19 = registerBlock("webguard3_19",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_20 = registerBlock("webguard3_20",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_21 = registerBlock("webguard3_21",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_22 = registerBlock("webguard3_22",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_23 = registerBlock("webguard3_23",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_24 = registerBlock("webguard3_24",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_25 = registerBlock("webguard3_25",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_26 = registerBlock("webguard3_26",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_27 = registerBlock("webguard3_27",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+    public static final RegistryObject<Block> WEBGUARD3_28 = registerBlock("webguard3_28",
+            () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
+
     public static final RegistryObject<Block> STALLGATE_B1 = registerBlock("stallgate_b1",
             () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
     public static final RegistryObject<Block> STALLGATE_B2 = registerBlock("stallgate_b2",

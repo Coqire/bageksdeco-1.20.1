@@ -43,7 +43,7 @@ public class LStallGateBlock extends Block {
     // ---------- OPEN SHAPES ----------
 
     public static final VoxelShape OPEN_EAST = Shapes.or(
-            Block.box(0, 0, 13, 16, 21, 16)
+            Block.box(13, 0, 0, 16, 21, 16)
     );
 
     public static final VoxelShape OPEN_NORTH = Shapes.or(

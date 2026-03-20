@@ -1795,7 +1795,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> WEBGUARD3_28 = registerBlock("webguard3_28",
             () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
 
-    public static final RegistryObject<Block> STALLGATE_B1 = registerBlock("stallgate_b1",
+    public static final RegistryObject<Block> STALLGATE_B1 = registerBlock("stallgate_b1.json",
             () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
     public static final RegistryObject<Block> STALLGATE_B2 = registerBlock("stallgate_b2",
             () -> new LStallGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));

@@ -384,9 +384,6 @@ public class ModBlocks {
             () -> new Ang1EstatefourFenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion().strength(1.0F, 6.0F)));
 
     //LEFT GATES
-    public static final RegistryObject<Block> LGATEONE_1 = registerBlock("lgateone_1",
-            () -> new LeftGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
-            
     public static final RegistryObject<Block> LGATEONE_2 = registerBlock("lgateone_2",
             () -> new LeftGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
             
@@ -1927,6 +1924,14 @@ public class ModBlocks {
     public static final RegistryObject<Block> CATTLE_2 = registerBlock("cattle_2",
             () -> new EstatethreeFenceBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).noOcclusion().strength(1.0F, 6.0F)));
 
+
+    //NEW IMPROVED
+    public static final RegistryObject<Block> LGATEONE_1 = registerBlock("lgateone_1",
+            () -> new ImprovedFenceBlock(
+                    BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)
+                            .noOcclusion()
+                            .strength(1.0F, 6.0F)
+            ));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

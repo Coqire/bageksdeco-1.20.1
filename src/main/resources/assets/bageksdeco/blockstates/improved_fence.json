@@ -1,0 +1,32 @@
+{
+  "variants": {
+    "part=0,facing=north,open=false": {
+      "model": "bageksdeco:block/lgateone"
+    },
+    "part=0,facing=south,open=false": {
+      "model": "bageksdeco:block/lgateone"
+    },
+    "part=0,facing=east,open=false": {
+      "model": "bageksdeco:block/lgateone"
+    },
+    "part=0,facing=west,open=false": {
+      "model": "bageksdeco:block/lgateone"
+    },
+
+    "part=1,facing=north,open=false": {
+      "model": "bageksdeco:block/empty"
+    },
+    "part=2,facing=north,open=false": {
+      "model": "bageksdeco:block/empty"
+    },
+    "part=3,facing=north,open=false": {
+      "model": "bageksdeco:block/empty"
+    },
+    "part=4,facing=north,open=false": {
+      "model": "bageksdeco:block/empty"
+    },
+    "part=5,facing=north,open=false": {
+      "model": "bageksdeco:block/empty"
+    }
+  }
+}

@@ -1,5 +1,6 @@
 package com.coqire.bageksdeco;
 
+import com.coqire.bageksdeco.block.ImprovedModBlocks;
 import com.coqire.bageksdeco.block.ModBlocks;
 import com.coqire.bageksdeco.item.BageksCreativeModTab;
 import com.coqire.bageksdeco.item.ModItems;
@@ -15,6 +16,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import com.coqire.bageksdeco.block.entity.ModBlockEntities;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(bageksdeco.MOD_ID)
@@ -32,6 +34,8 @@ public class bageksdeco
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         BageksCreativeModTab.init(modEventBus);
+        ImprovedModBlocks.BLOCKS.register(modEventBus);
+        ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }

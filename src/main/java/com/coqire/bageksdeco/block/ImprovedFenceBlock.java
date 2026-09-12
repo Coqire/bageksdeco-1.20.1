@@ -1,11 +1,14 @@
 package com.coqire.bageksdeco.block;
 
 import com.coqire.bageksdeco.block.entity.ImprovedGateBlockEntity;
+import com.coqire.bageksdeco.entity.GateCollisionEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -35,16 +38,6 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING =
             DirectionProperty.create("facing", Direction.Plane.HORIZONTAL);
 
-    /*
-     * PARTS:
-     *
-     *        4 | 3 | 5
-     *       ---+---+---
-     *        1 | 0 | 2
-     *
-     * PART 0 = master / center bottom
-     */
-
     private static final VoxelShape SOUTH_SHAPE =
             Block.box(0, 0, 0, 16, 16, 3);
 
@@ -56,9 +49,6 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
 
     private static final VoxelShape WEST_SHAPE =
             Block.box(13, 0, 0, 16, 16, 16);
-
-    private static final VoxelShape OPEN_SHAPE =
-            Shapes.empty();
 
     private static final ThreadLocal<Boolean> REMOVING_MULTIBLOCK =
             ThreadLocal.withInitial(() -> false);
@@ -99,8 +89,11 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
         Direction facing =
                 context.getHorizontalDirection();
 
-        Direction left = getLeftDirection(facing);
-        Direction right = getRightDirection(facing);
+        Direction left =
+                getLeftDirection(facing);
+
+        Direction right =
+                getRightDirection(facing);
 
         BlockPos leftPos =
                 masterPos.relative(left);
@@ -156,9 +149,6 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
         return facing.getCounterClockWise();
     }
 
-    /*
-     * Returns the direction used for the right side of the gate.
-     */
     private static Direction getRightDirection(Direction facing) {
 
         if (facing == Direction.NORTH || facing == Direction.WEST) {
@@ -168,9 +158,6 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
         return facing.getClockWise();
     }
 
-    /*
-     * Creates the other five blocks.
-     */
     @Override
     public void setPlacedBy(
             Level level,
@@ -264,15 +251,12 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
         );
     }
 
-    /*
-     * Right-click instantly opens/closes the gate.
-     */
     @Override
     public InteractionResult use(
             BlockState state,
             Level level,
             BlockPos pos,
-            net.minecraft.world.entity.player.Player player,
+            Player player,
             InteractionHand hand,
             BlockHitResult hit
     ) {
@@ -322,6 +306,7 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
         Direction right =
                 getRightDirection(facing);
 
+        // Bottom center - PART 0
         setOpen(
                 level,
                 masterPos,
@@ -330,6 +315,7 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
                 open
         );
 
+        // Bottom left - PART 1
         setOpen(
                 level,
                 masterPos.relative(left),
@@ -338,6 +324,7 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
                 open
         );
 
+        // Bottom right - PART 2
         setOpen(
                 level,
                 masterPos.relative(right),
@@ -349,6 +336,7 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
         BlockPos top =
                 masterPos.above();
 
+        // Top center - PART 3
         setOpen(
                 level,
                 top,
@@ -357,6 +345,7 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
                 open
         );
 
+        // Top left - PART 4
         setOpen(
                 level,
                 top.relative(left),
@@ -365,6 +354,7 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
                 open
         );
 
+        // Top right - PART 5
         setOpen(
                 level,
                 top.relative(right),
@@ -372,6 +362,24 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
                 facing,
                 open
         );
+
+        if (level instanceof ServerLevel serverLevel) {
+
+            if (open) {
+
+                GateCollisionEntity.spawnForGate(
+                        serverLevel,
+                        masterPos
+                );
+
+            } else {
+
+                GateCollisionEntity.removeForGate(
+                        serverLevel,
+                        masterPos
+                );
+            }
+        }
     }
 
     private void setOpen(
@@ -398,9 +406,6 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
         }
     }
 
-    /*
-     * Finds the master block from any part.
-     */
     private BlockPos findMasterPosition(
             BlockPos pos,
             BlockState state
@@ -443,15 +448,18 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
             BlockPos pos,
             CollisionContext context
     ) {
+
         if (state.getValue(OPEN)) {
-            return OPEN_SHAPE;
+            return Shapes.empty();
         }
 
         return switch (state.getValue(FACING)) {
+
             case NORTH -> NORTH_SHAPE;
             case SOUTH -> SOUTH_SHAPE;
             case EAST -> EAST_SHAPE;
             case WEST -> WEST_SHAPE;
+
             default -> SOUTH_SHAPE;
         };
     }
@@ -463,10 +471,6 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
             BlockPos pos,
             CollisionContext context
     ) {
-        if (state.getValue(OPEN)) {
-            return OPEN_SHAPE;
-        }
-
         return switch (state.getValue(FACING)) {
             case NORTH -> NORTH_SHAPE;
             case SOUTH -> SOUTH_SHAPE;
@@ -478,6 +482,7 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
 
     @Override
     public RenderShape getRenderShape(BlockState state) {
+
         if (state.getValue(OPEN)) {
             return RenderShape.ENTITYBLOCK_ANIMATED;
         }
@@ -485,9 +490,6 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
         return RenderShape.MODEL;
     }
 
-    /*
-     * Breaking ANY part removes the entire gate.
-     */
     @Override
     public void onRemove(
             BlockState state,
@@ -535,16 +537,27 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
                                 default -> pos;
                             };
 
+                    if (level instanceof ServerLevel serverLevel) {
+
+                        GateCollisionEntity.removeForGate(
+                                serverLevel,
+                                masterPos
+                        );
+                    }
+
+                    // Bottom center
                     removePart(
                             level,
                             masterPos
                     );
 
+                    // Bottom left
                     removePart(
                             level,
                             masterPos.relative(left)
                     );
 
+                    // Bottom right
                     removePart(
                             level,
                             masterPos.relative(right)
@@ -553,16 +566,19 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
                     BlockPos top =
                             masterPos.above();
 
+                    // Top center
                     removePart(
                             level,
                             top
                     );
 
+                    // Top left
                     removePart(
                             level,
                             top.relative(left)
                     );
 
+                    // Top right
                     removePart(
                             level,
                             top.relative(right)

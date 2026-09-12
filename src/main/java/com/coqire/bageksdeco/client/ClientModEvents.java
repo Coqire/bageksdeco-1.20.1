@@ -3,10 +3,12 @@ package com.coqire.bageksdeco.client;
 import com.coqire.bageksdeco.bageksdeco;
 import com.coqire.bageksdeco.block.entity.ModBlockEntities;
 import com.coqire.bageksdeco.client.renderer.ImprovedGateRenderer;
+import com.coqire.bageksdeco.entity.ModEntities;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraft.client.renderer.entity.NoopRenderer;
 
 @Mod.EventBusSubscriber(
         modid = bageksdeco.MOD_ID,
@@ -22,6 +24,11 @@ public class ClientModEvents {
         event.registerBlockEntityRenderer(
                 ModBlockEntities.IMPROVED_GATE.get(),
                 ImprovedGateRenderer::new
+        );
+
+        event.registerEntityRenderer(
+                ModEntities.GATE_COLLISION.get(),
+                NoopRenderer::new
         );
     }
 }

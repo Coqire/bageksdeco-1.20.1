@@ -41,6 +41,94 @@ public class BagekBlocks {
                     )
             );
 
+    public static final RegistryObject<Block> LGATETWO_1 =
+            registerBlock(
+                    "lgatetwo_1",
+                    () -> new ImprovedFenceBlock(
+                            BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)
+                                    .noOcclusion()
+                                    .strength(1.0F, 6.0F),
+                            GateSwing.LEFT
+                    )
+            );
+
+    public static final RegistryObject<Block> RGATETWO_1 =
+            registerBlock(
+                    "rgatetwo_1",
+                    () -> new ImprovedFenceBlock(
+                            BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)
+                                    .noOcclusion()
+                                    .strength(1.0F, 6.0F),
+                            GateSwing.RIGHT
+                    )
+            );
+
+    public static final RegistryObject<Block> LGATETHREE_1 =
+            registerBlock(
+                    "lgatethree_1",
+                    () -> new ImprovedFenceBlock(
+                            BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)
+                                    .noOcclusion()
+                                    .strength(1.0F, 6.0F),
+                            GateSwing.LEFT
+                    )
+            );
+
+    public static final RegistryObject<Block> RGATETHREE_1 =
+            registerBlock(
+                    "rgatethree_1",
+                    () -> new ImprovedFenceBlock(
+                            BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)
+                                    .noOcclusion()
+                                    .strength(1.0F, 6.0F),
+                            GateSwing.RIGHT
+                    )
+            );
+
+    public static final RegistryObject<Block> LGATEFOUR_1 =
+            registerBlock(
+                    "lgatefour_1",
+                    () -> new ImprovedFenceBlock(
+                            BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)
+                                    .noOcclusion()
+                                    .strength(1.0F, 6.0F),
+                            GateSwing.LEFT
+                    )
+            );
+
+    public static final RegistryObject<Block> RGATEFOUR_1 =
+            registerBlock(
+                    "rgatefour_1",
+                    () -> new ImprovedFenceBlock(
+                            BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)
+                                    .noOcclusion()
+                                    .strength(1.0F, 6.0F),
+                            GateSwing.RIGHT
+                    )
+            );
+
+    public static final RegistryObject<Block> LGATEFIVE_1 =
+            registerBlock(
+                    "lgatefive_1",
+                    () -> new ImprovedFenceBlock(
+                            BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)
+                                    .noOcclusion()
+                                    .strength(1.0F, 6.0F),
+                            GateSwing.LEFT
+                    )
+            );
+
+    public static final RegistryObject<Block> RGATEFIVE_1 =
+            registerBlock(
+                    "rgatefive_1",
+                    () -> new ImprovedFenceBlock(
+                            BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)
+                                    .noOcclusion()
+                                    .strength(1.0F, 6.0F),
+                            GateSwing.RIGHT
+                    )
+            );
+
     private static <T extends Block> RegistryObject<T> registerBlock(
             String name,
             java.util.function.Supplier<T> block

@@ -415,9 +415,6 @@ public class ModBlocks {
             () -> new LeftGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
             
 
-    public static final RegistryObject<Block> LGATETWO_1 = registerBlock("lgatetwo_1",
-            () -> new LeftGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
-            
     public static final RegistryObject<Block> LGATETWO_2 = registerBlock("lgatetwo_2",
             () -> new LeftGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
             
@@ -449,9 +446,6 @@ public class ModBlocks {
             () -> new RightGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
             
 
-    public static final RegistryObject<Block> LGATETHREE_1 = registerBlock("lgatethree_1",
-            () -> new LeftGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
-            
     public static final RegistryObject<Block> LGATETHREE_2 = registerBlock("lgatethree_2",
             () -> new LeftGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
             
@@ -483,9 +477,6 @@ public class ModBlocks {
             () -> new RightGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
             
 
-    public static final RegistryObject<Block> LGATEFOUR_1 = registerBlock("lgatefour_1",
-            () -> new LeftGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
-            
     public static final RegistryObject<Block> LGATEFOUR_2 = registerBlock("lgatefour_2",
             () -> new LeftGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
             
@@ -517,9 +508,6 @@ public class ModBlocks {
             () -> new RightGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
             
 
-    public static final RegistryObject<Block> LGATEFIVE_1 = registerBlock("lgatefive_1",
-            () -> new LeftGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
-            
     public static final RegistryObject<Block> LGATEFIVE_2 = registerBlock("lgatefive_2",
             () -> new LeftGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
             
@@ -580,11 +568,7 @@ public class ModBlocks {
             
     public static final RegistryObject<Block> RGATEONE_11 = registerBlock("rgateone_11",
             () -> new RightGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
-            
 
-    public static final RegistryObject<Block> RGATETWO_1 = registerBlock("rgatetwo_1",
-            () -> new RightGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
-            
     public static final RegistryObject<Block> RGATETWO_2 = registerBlock("rgatetwo_2",
             () -> new RightGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
             
@@ -616,9 +600,6 @@ public class ModBlocks {
             () -> new RightGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
             
 
-    public static final RegistryObject<Block> RGATETHREE_1 = registerBlock("rgatethree_1",
-            () -> new RightGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
-            
     public static final RegistryObject<Block> RGATETHREE_2 = registerBlock("rgatethree_2",
             () -> new RightGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
             
@@ -648,11 +629,7 @@ public class ModBlocks {
             
     public static final RegistryObject<Block> RGATETHREE_11 = registerBlock("rgatethree_11",
             () -> new RightGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
-            
 
-    public static final RegistryObject<Block> RGATEFOUR_1 = registerBlock("rgatefour_1",
-            () -> new RightGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
-            
     public static final RegistryObject<Block> RGATEFOUR_2 = registerBlock("rgatefour_2",
             () -> new RightGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
             
@@ -682,11 +659,7 @@ public class ModBlocks {
             
     public static final RegistryObject<Block> RGATEFOUR_11 = registerBlock("rgatefour_11",
             () -> new RightGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
-            
 
-    public static final RegistryObject<Block> RGATEFIVE_1 = registerBlock("rgatefive_1",
-            () -> new RightGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
-            
     public static final RegistryObject<Block> RGATEFIVE_2 = registerBlock("rgatefive_2",
             () -> new RightGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion().strength(1.0F, 6.0F)));
             

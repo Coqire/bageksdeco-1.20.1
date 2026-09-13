@@ -1,5 +1,6 @@
 package com.coqire.bageksdeco.entity;
 
+import com.coqire.bageksdeco.block.GateSwing;
 import com.coqire.bageksdeco.block.ImprovedFenceBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.protocol.Packet;
@@ -105,9 +106,22 @@ public class GateCollisionEntity extends Entity {
         double y = masterPos.getY();
         double z = masterPos.getZ();
 
+        boolean right =
+                state.getBlock() instanceof ImprovedFenceBlock gate
+                        && gate.getSwing() == GateSwing.RIGHT;
+
         return switch (state.getValue(ImprovedFenceBlock.FACING)) {
 
-            case SOUTH -> new AABB(
+            case SOUTH -> right
+                    ? new AABB(
+                    x - 1.25,
+                    y,
+                    z,
+                    x - 0.75,
+                    y + 2.0,
+                    z + 3.0
+            )
+                    : new AABB(
                     x + 1.75,
                     y,
                     z,
@@ -116,7 +130,16 @@ public class GateCollisionEntity extends Entity {
                     z + 3.0
             );
 
-            case NORTH -> new AABB(
+            case NORTH -> right
+                    ? new AABB(
+                    x + 1.75,
+                    y,
+                    z - 2.0,
+                    x + 2.25,
+                    y + 2.0,
+                    z + 1.0
+            )
+                    : new AABB(
                     x - 1.25,
                     y,
                     z - 2.0,
@@ -125,7 +148,16 @@ public class GateCollisionEntity extends Entity {
                     z + 1.0
             );
 
-            case EAST -> new AABB(
+            case EAST -> right
+                    ? new AABB(
+                    x,
+                    y,
+                    z + 1.5,
+                    x + 3.0,
+                    y + 2.0,
+                    z + 2.0
+            )
+                    : new AABB(
                     x,
                     y,
                     z - 1.0,
@@ -134,7 +166,16 @@ public class GateCollisionEntity extends Entity {
                     z - 0.5
             );
 
-            case WEST -> new AABB(
+            case WEST -> right
+                    ? new AABB(
+                    x - 2.0,
+                    y,
+                    z - 1.25,
+                    x + 1.0,
+                    y + 2.0,
+                    z - 0.75
+            )
+                    : new AABB(
                     x - 2.0,
                     y,
                     z + 1.75,

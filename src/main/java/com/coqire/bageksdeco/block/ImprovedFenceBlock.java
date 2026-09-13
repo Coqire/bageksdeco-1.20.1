@@ -36,7 +36,10 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
             BooleanProperty.create("open");
 
     public static final DirectionProperty FACING =
-            DirectionProperty.create("facing", Direction.Plane.HORIZONTAL);
+            DirectionProperty.create(
+                    "facing",
+                    Direction.Plane.HORIZONTAL
+            );
 
     private static final VoxelShape SOUTH_SHAPE =
             Block.box(0, 0, 0, 16, 16, 3);
@@ -53,8 +56,19 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
     private static final ThreadLocal<Boolean> REMOVING_MULTIBLOCK =
             ThreadLocal.withInitial(() -> false);
 
+    private final GateSwing swing;
+
     public ImprovedFenceBlock(Properties properties) {
+        this(properties, GateSwing.LEFT);
+    }
+
+    public ImprovedFenceBlock(
+            Properties properties,
+            GateSwing swing
+    ) {
         super(properties);
+
+        this.swing = swing;
 
         registerDefaultState(
                 stateDefinition.any()
@@ -64,75 +78,13 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
         );
     }
 
-    @Override
-    protected void createBlockStateDefinition(
-            StateDefinition.Builder<Block, BlockState> builder
-    ) {
-        builder.add(
-                PART,
-                OPEN,
-                FACING
-        );
+    public GateSwing getSwing() {
+        return swing;
     }
 
-    /*
-     * Gets the direction the player is looking toward when placing.
-     */
     @Override
-    public BlockState getStateForPlacement(
-            BlockPlaceContext context
-    ) {
-
-        Level level = context.getLevel();
-        BlockPos masterPos = context.getClickedPos();
-
-        Direction facing =
-                context.getHorizontalDirection();
-
-        Direction left =
-                getLeftDirection(facing);
-
-        Direction right =
-                getRightDirection(facing);
-
-        BlockPos leftPos =
-                masterPos.relative(left);
-
-        BlockPos rightPos =
-                masterPos.relative(right);
-
-        BlockPos top =
-                masterPos.above();
-
-        BlockPos topLeft =
-                top.relative(left);
-
-        BlockPos topRight =
-                top.relative(right);
-
-        if (!level.getBlockState(masterPos).canBeReplaced(context)) {
-            return null;
-        }
-
-        if (!level.getBlockState(leftPos).canBeReplaced(context)) {
-            return null;
-        }
-
-        if (!level.getBlockState(rightPos).canBeReplaced(context)) {
-            return null;
-        }
-
-        if (!level.getBlockState(top).canBeReplaced(context)) {
-            return null;
-        }
-
-        if (!level.getBlockState(topLeft).canBeReplaced(context)) {
-            return null;
-        }
-
-        if (!level.getBlockState(topRight).canBeReplaced(context)) {
-            return null;
-        }
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        Direction facing = context.getHorizontalDirection();
 
         return defaultBlockState()
                 .setValue(PART, 0)
@@ -141,8 +93,8 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
     }
 
     private static Direction getLeftDirection(Direction facing) {
-
-        if (facing == Direction.NORTH || facing == Direction.WEST) {
+        if (facing == Direction.NORTH ||
+                facing == Direction.WEST) {
             return facing.getClockWise();
         }
 
@@ -150,8 +102,8 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
     }
 
     private static Direction getRightDirection(Direction facing) {
-
-        if (facing == Direction.NORTH || facing == Direction.WEST) {
+        if (facing == Direction.NORTH ||
+                facing == Direction.WEST) {
             return facing.getCounterClockWise();
         }
 
@@ -166,7 +118,6 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
             LivingEntity placer,
             ItemStack stack
     ) {
-
         super.setPlacedBy(
                 level,
                 pos,
@@ -174,10 +125,6 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
                 placer,
                 stack
         );
-
-        if (level.isClientSide) {
-            return;
-        }
 
         Direction facing =
                 state.getValue(FACING);
@@ -202,36 +149,26 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
                 facing
         );
 
-        BlockPos top =
-                pos.above();
-
         setPart(
                 level,
-                top,
+                pos.above(),
                 3,
                 facing
         );
 
         setPart(
                 level,
-                top.relative(left),
+                pos.above().relative(left),
                 4,
                 facing
         );
 
         setPart(
                 level,
-                top.relative(right),
+                pos.above().relative(right),
                 5,
                 facing
         );
-
-        BlockEntity blockEntity =
-                level.getBlockEntity(pos);
-
-        if (blockEntity instanceof ImprovedGateBlockEntity gate) {
-            gate.setMasterPos(pos);
-        }
     }
 
     private void setPart(
@@ -240,15 +177,61 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
             int part,
             Direction facing
     ) {
+        if (level.isEmptyBlock(pos)) {
+            level.setBlock(
+                    pos,
+                    defaultBlockState()
+                            .setValue(PART, part)
+                            .setValue(OPEN, false)
+                            .setValue(FACING, facing),
+                    Block.UPDATE_ALL
+            );
+        }
+    }
 
-        level.setBlock(
+    @Override
+    public BlockEntity newBlockEntity(
+            BlockPos pos,
+            BlockState state
+    ) {
+        if (state.getValue(PART) != 0) {
+            return null;
+        }
+
+        return new ImprovedGateBlockEntity(
                 pos,
-                defaultBlockState()
-                        .setValue(PART, part)
-                        .setValue(OPEN, false)
-                        .setValue(FACING, facing),
-                Block.UPDATE_ALL
+                state
         );
+    }
+
+    private BlockPos findMasterPosition(
+            BlockPos pos,
+            BlockState state
+    ) {
+        int part =
+                state.getValue(PART);
+
+        if (part == 0) {
+            return pos;
+        }
+
+        Direction facing =
+                state.getValue(FACING);
+
+        Direction left =
+                getLeftDirection(facing);
+
+        Direction right =
+                getRightDirection(facing);
+
+        return switch (part) {
+            case 1 -> pos.relative(right);
+            case 2 -> pos.relative(left);
+            case 3 -> pos.below();
+            case 4 -> pos.below().relative(right);
+            case 5 -> pos.below().relative(left);
+            default -> pos;
+        };
     }
 
     @Override
@@ -260,13 +243,15 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
             InteractionHand hand,
             BlockHitResult hit
     ) {
-
         if (level.isClientSide) {
             return InteractionResult.SUCCESS;
         }
 
         BlockPos masterPos =
-                findMasterPosition(pos, state);
+                findMasterPosition(
+                        pos,
+                        state
+                );
 
         BlockState masterState =
                 level.getBlockState(masterPos);
@@ -293,7 +278,6 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
             BlockPos masterPos,
             boolean open
     ) {
-
         BlockState master =
                 level.getBlockState(masterPos);
 
@@ -306,7 +290,6 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
         Direction right =
                 getRightDirection(facing);
 
-        // Bottom center - PART 0
         setOpen(
                 level,
                 masterPos,
@@ -315,7 +298,6 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
                 open
         );
 
-        // Bottom left - PART 1
         setOpen(
                 level,
                 masterPos.relative(left),
@@ -324,7 +306,6 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
                 open
         );
 
-        // Bottom right - PART 2
         setOpen(
                 level,
                 masterPos.relative(right),
@@ -336,7 +317,6 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
         BlockPos top =
                 masterPos.above();
 
-        // Top center - PART 3
         setOpen(
                 level,
                 top,
@@ -345,7 +325,6 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
                 open
         );
 
-        // Top left - PART 4
         setOpen(
                 level,
                 top.relative(left),
@@ -354,7 +333,6 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
                 open
         );
 
-        // Top right - PART 5
         setOpen(
                 level,
                 top.relative(right),
@@ -364,16 +342,12 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
         );
 
         if (level instanceof ServerLevel serverLevel) {
-
             if (open) {
-
                 GateCollisionEntity.spawnForGate(
                         serverLevel,
                         masterPos
                 );
-
             } else {
-
                 GateCollisionEntity.removeForGate(
                         serverLevel,
                         masterPos
@@ -389,12 +363,11 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
             Direction facing,
             boolean open
     ) {
-
         BlockState state =
                 level.getBlockState(pos);
 
-        if (state.getBlock() instanceof ImprovedFenceBlock) {
-
+        if (state.getBlock()
+                instanceof ImprovedFenceBlock) {
             level.setBlock(
                     pos,
                     defaultBlockState()
@@ -406,41 +379,6 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
         }
     }
 
-    private BlockPos findMasterPosition(
-            BlockPos pos,
-            BlockState state
-    ) {
-
-        int part =
-                state.getValue(PART);
-
-        Direction facing =
-                state.getValue(FACING);
-
-        Direction left =
-                getLeftDirection(facing);
-
-        Direction right =
-                getRightDirection(facing);
-
-        return switch (part) {
-
-            case 0 -> pos;
-
-            case 1 -> pos.relative(right);
-
-            case 2 -> pos.relative(left);
-
-            case 3 -> pos.below();
-
-            case 4 -> pos.below().relative(right);
-
-            case 5 -> pos.below().relative(left);
-
-            default -> pos;
-        };
-    }
-
     @Override
     public VoxelShape getCollisionShape(
             BlockState state,
@@ -448,18 +386,17 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
             BlockPos pos,
             CollisionContext context
     ) {
-
         if (state.getValue(OPEN)) {
             return Shapes.empty();
         }
 
-        return switch (state.getValue(FACING)) {
-
+        return switch (
+                state.getValue(FACING)
+                ) {
             case NORTH -> NORTH_SHAPE;
             case SOUTH -> SOUTH_SHAPE;
             case EAST -> EAST_SHAPE;
             case WEST -> WEST_SHAPE;
-
             default -> SOUTH_SHAPE;
         };
     }
@@ -471,7 +408,9 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
             BlockPos pos,
             CollisionContext context
     ) {
-        return switch (state.getValue(FACING)) {
+        return switch (
+                state.getValue(FACING)
+                ) {
             case NORTH -> NORTH_SHAPE;
             case SOUTH -> SOUTH_SHAPE;
             case EAST -> EAST_SHAPE;
@@ -481,8 +420,9 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
     }
 
     @Override
-    public RenderShape getRenderShape(BlockState state) {
-
+    public RenderShape getRenderShape(
+            BlockState state
+    ) {
         if (state.getValue(OPEN)) {
             return RenderShape.ENTITYBLOCK_ANIMATED;
         }
@@ -496,99 +436,90 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
             Level level,
             BlockPos pos,
             BlockState newState,
-            boolean movedByPiston
+            boolean isMoving
     ) {
+        if (state.getBlock() == newState.getBlock()) {
+            super.onRemove(
+                    state,
+                    level,
+                    pos,
+                    newState,
+                    isMoving
+            );
+            return;
+        }
 
-        if (state.getBlock() != newState.getBlock()) {
+        if (REMOVING_MULTIBLOCK.get()) {
+            super.onRemove(
+                    state,
+                    level,
+                    pos,
+                    newState,
+                    isMoving
+            );
+            return;
+        }
 
-            if (!REMOVING_MULTIBLOCK.get()) {
+        REMOVING_MULTIBLOCK.set(true);
 
-                REMOVING_MULTIBLOCK.set(true);
-
-                try {
-
-                    int part =
-                            state.getValue(PART);
-
-                    Direction facing =
-                            state.getValue(FACING);
-
-                    Direction left =
-                            getLeftDirection(facing);
-
-                    Direction right =
-                            getRightDirection(facing);
-
-                    BlockPos masterPos =
-                            switch (part) {
-
-                                case 0 -> pos;
-
-                                case 1 -> pos.relative(right);
-
-                                case 2 -> pos.relative(left);
-
-                                case 3 -> pos.below();
-
-                                case 4 -> pos.below().relative(right);
-
-                                case 5 -> pos.below().relative(left);
-
-                                default -> pos;
-                            };
-
-                    if (level instanceof ServerLevel serverLevel) {
-
-                        GateCollisionEntity.removeForGate(
-                                serverLevel,
-                                masterPos
-                        );
-                    }
-
-                    // Bottom center
-                    removePart(
-                            level,
-                            masterPos
+        try {
+            BlockPos masterPos =
+                    findMasterPosition(
+                            pos,
+                            state
                     );
 
-                    // Bottom left
-                    removePart(
-                            level,
-                            masterPos.relative(left)
-                    );
-
-                    // Bottom right
-                    removePart(
-                            level,
-                            masterPos.relative(right)
-                    );
-
-                    BlockPos top =
-                            masterPos.above();
-
-                    // Top center
-                    removePart(
-                            level,
-                            top
-                    );
-
-                    // Top left
-                    removePart(
-                            level,
-                            top.relative(left)
-                    );
-
-                    // Top right
-                    removePart(
-                            level,
-                            top.relative(right)
-                    );
-
-                } finally {
-
-                    REMOVING_MULTIBLOCK.set(false);
-                }
+            if (level instanceof ServerLevel serverLevel) {
+                GateCollisionEntity.removeForGate(
+                        serverLevel,
+                        masterPos
+                );
             }
+
+            Direction facing =
+                    state.getValue(FACING);
+
+            Direction left =
+                    getLeftDirection(facing);
+
+            Direction right =
+                    getRightDirection(facing);
+
+            removePart(
+                    level,
+                    masterPos
+            );
+
+            removePart(
+                    level,
+                    masterPos.relative(left)
+            );
+
+            removePart(
+                    level,
+                    masterPos.relative(right)
+            );
+
+            BlockPos top =
+                    masterPos.above();
+
+            removePart(
+                    level,
+                    top
+            );
+
+            removePart(
+                    level,
+                    top.relative(left)
+            );
+
+            removePart(
+                    level,
+                    top.relative(right)
+            );
+
+        } finally {
+            REMOVING_MULTIBLOCK.set(false);
         }
 
         super.onRemove(
@@ -596,7 +527,7 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
                 level,
                 pos,
                 newState,
-                movedByPiston
+                isMoving
         );
     }
 
@@ -604,10 +535,11 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
             Level level,
             BlockPos pos
     ) {
+        BlockState state =
+                level.getBlockState(pos);
 
-        if (level.getBlockState(pos)
-                .getBlock() instanceof ImprovedFenceBlock) {
-
+        if (state.getBlock()
+                instanceof ImprovedFenceBlock) {
             level.removeBlock(
                     pos,
                     false
@@ -616,18 +548,13 @@ public class ImprovedFenceBlock extends BaseEntityBlock {
     }
 
     @Override
-    public BlockEntity newBlockEntity(
-            BlockPos pos,
-            BlockState state
+    protected void createBlockStateDefinition(
+            StateDefinition.Builder<Block, BlockState> builder
     ) {
-
-        if (state.getValue(PART) != 0) {
-            return null;
-        }
-
-        return new ImprovedGateBlockEntity(
-                pos,
-                state
+        builder.add(
+                PART,
+                OPEN,
+                FACING
         );
     }
 }

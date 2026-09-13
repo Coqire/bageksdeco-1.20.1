@@ -1,7 +1,7 @@
 package com.coqire.bageksdeco.block.entity;
 
 import com.coqire.bageksdeco.bageksdeco;
-import com.coqire.bageksdeco.block.ModBlocks;
+import com.coqire.bageksdeco.block.BagekBlocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -20,7 +20,8 @@ public class ModBlockEntities {
                     "improved_gate",
                     () -> BlockEntityType.Builder.of(
                             ImprovedGateBlockEntity::new,
-                            ModBlocks.LGATEONE_1.get()
+                            BagekBlocks.LGATEONE_1.get(),
+                            BagekBlocks.RGATEONE_1.get()
                     ).build(null)
             );
 }

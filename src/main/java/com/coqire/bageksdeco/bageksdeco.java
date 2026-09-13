@@ -1,8 +1,10 @@
 package com.coqire.bageksdeco;
 
+import com.coqire.bageksdeco.block.BagekBlocks;
 import com.coqire.bageksdeco.block.ImprovedModBlocks;
 import com.coqire.bageksdeco.block.ModBlocks;
 import com.coqire.bageksdeco.entity.ModEntities;
+import com.coqire.bageksdeco.item.BagekItems;
 import com.coqire.bageksdeco.item.BageksCreativeModTab;
 import com.coqire.bageksdeco.item.ModItems;
 import com.mojang.logging.LogUtils;
@@ -38,6 +40,8 @@ public class bageksdeco
         ImprovedModBlocks.BLOCKS.register(modEventBus);
         ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
         ModEntities.ENTITIES.register(modEventBus);
+        BagekItems.ITEMS.register(modEventBus);
+        BagekBlocks.BLOCKS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }

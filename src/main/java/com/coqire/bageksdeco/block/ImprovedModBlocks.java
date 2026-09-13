@@ -1,11 +1,9 @@
 package com.coqire.bageksdeco.block;
 
 import com.coqire.bageksdeco.bageksdeco;
-
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -22,7 +20,8 @@ public class ImprovedModBlocks {
             BLOCKS.register(
                     "improved_fence",
                     () -> new ImprovedFenceBlock(
-                            BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)
+                            BlockBehaviour.Properties.copy(Blocks.OAK_FENCE),
+                            GateSwing.LEFT
                     )
             );
 }
